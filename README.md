@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)](https://github.com/Dori-Grey/hexlet-ci-app/actions)
+
 # Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application

@@ -1,0 +1,31 @@
+name: hexlet-ci-app
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  hexlet_build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node_version: ${{ matrix.node_version }}
+          cache: 'npm'
+      - name: setup
+        uses: make setup
+      - name: start app
+        uses: make start
+# run parallel tests
+      - name: run tests
+        uses: make test
+
+      - name: linter
+        uses: make lint  
