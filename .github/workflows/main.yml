@@ -20,12 +20,12 @@ jobs:
           node_version: ${{ matrix.node_version }}
           cache: 'npm'
       - name: setup
-        uses: make setup
+        run: make setup
       - name: start app
-        uses: make start
+        run: make start
 # run parallel tests
       - name: run tests
-        uses: make test
+        run: make test
 
       - name: linter
-        uses: make lint  
+        run: make lint
